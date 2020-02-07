@@ -9,12 +9,11 @@ import sorters.BubbleSorter;
 import sorters.NumberSorter;
 import sorters.SelectionSorter;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         NumberProvider theProvider = new FromUserNumberProvider();
 
         var theNumbers = theProvider.provideNumbers();
