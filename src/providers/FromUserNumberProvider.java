@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FromUserNumberProvider implements NumberProvider {
     @Override
-    public List<Integer> provideNumbers() throws IOException {
+    public List<Integer> provideNumbers() {
         List<Integer> result = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
