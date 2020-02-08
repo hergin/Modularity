@@ -16,7 +16,7 @@ public class FromFileNumberProvider implements NumberProvider {
 
     private HashMap<String, NumberParser> parsers;
 
-    public FromFileNumberProvider() {
+    public FromFileNumberProvider(long l) {
         parsers = new HashMap<>();
         parsers.put("csv", new ParseNumbersFromCSV());
         parsers.put("xml", new ParseNumbersFromXML());
