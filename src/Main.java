@@ -1,17 +1,20 @@
+import exporters.ConsoleExporter;
 import exporters.HTMLExporter;
 import exporters.NumberExporter;
+import providers.AnotherProvider;
 import providers.FromFileNumberProvider;
 import providers.NumberProvider;
 import providers.RandomNumberProvider;
 import sorters.BubbleSorter;
 import sorters.NumberSorter;
+import sorters.SelectionSort;
 
 import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        NumberProvider theProvider = new RandomNumberProvider(System.nanoTime());
+        NumberProvider theProvider = new AnotherProvider();
 
         var theNumbers = theProvider.provideNumbers();
 
@@ -22,7 +25,7 @@ public class Main {
 
         System.out.println("AFTER SORTING : [" + sortedNumbers.stream().map(Object::toString).collect(Collectors.joining(",")) + "]");
 
-        NumberExporter theExporter = new HTMLExporter("numbersFormatted");
+        NumberExporter theExporter = new ConsoleExporter();
         theExporter.export(sortedNumbers);
     }
 }
