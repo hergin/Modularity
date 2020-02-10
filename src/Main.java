@@ -1,5 +1,6 @@
 import exporters.HTMLExporter;
 import exporters.NumberExporter;
+import providers.AnotherProvider;
 import providers.FromFileNumberProvider;
 import providers.NumberProvider;
 import providers.RandomNumberProvider;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        NumberProvider theProvider = new RandomNumberProvider(System.nanoTime());
+        NumberProvider theProvider = new AnotherProvider();
 
         var theNumbers = theProvider.provideNumbers();
 
